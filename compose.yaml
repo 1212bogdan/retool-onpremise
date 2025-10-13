@@ -70,17 +70,10 @@ services:
     # user: retool_user
     # environment:
     #   - ALLOW_UNSAFE_CODE_EXECUTION=true
-    #   - NODE_ENV=production
-    #   - NODE_OPTIONS=--max_old_space_size=1024
-
-    environment:
-      - NODE_ENV=production
-      - NODE_OPTIONS=--max_old_space_size=1024
 
     networks:
       - code-executor
     restart: always
-
 
   # Retool's internal DB, we recommend using an externally hosted database: https://docs.retool.com/docs/configuring-retools-storage-database
   postgres:
