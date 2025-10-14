@@ -90,14 +90,17 @@ services:
     build:
       context: .
       target: code-executor
-    environment:
-      - NODE_ENV=production
-      - NODE_OPTIONS=--max_old_space_size=1024
+    
+    # Option 1 (preferred): Run privileged to sandbox user code in Workflows
+    privileged: true
+
+    # Option 2: Run unprivileged, potentially required with your host machine permissions
+    # user: retool_user
+    # environment:
+    #   - ALLOW_UNSAFE_CODE_EXECUTION=true
+
     networks:
       - code-executor
-    # Privileged is required to sandbox user code execution and to use custom libraries
-    # Set to false if your deployment method does not allow this
-    privileged: true
     restart: always
 
   # Retool's internal DB, we recommend using an externally hosted database: https://docs.retool.com/docs/configuring-retools-storage-database
