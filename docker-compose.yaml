@@ -111,7 +111,7 @@ services:
   code-executor:
     build:
       context: .
-      dockerfile: CodeExecutor.Dockerfile
+      dockerfile: Dockerfile
     command: bash -c "./start.sh"
     environment:
       DEPLOYMENT_TEMPLATE_TYPE: docker-compose
