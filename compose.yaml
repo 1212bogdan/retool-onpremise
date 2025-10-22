@@ -136,7 +136,7 @@ services:
       PROXY_SEND_TIMEOUT: 600
       PROXY_READ_TIMEOUT: 600
     ports:
-      - 80:80
+      - 8081:80
       - 443:443
     networks:
       - frontend
